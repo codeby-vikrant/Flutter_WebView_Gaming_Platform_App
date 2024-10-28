@@ -14,6 +14,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
   bool _isLoading = true;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: const Text('Game WebView')),
+      body: const Stack(
+        children: [
+
+        ],
+      ),
+    );
   }
 }
