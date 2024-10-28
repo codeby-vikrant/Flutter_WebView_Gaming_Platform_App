@@ -7,4 +7,9 @@ class GameProvider with ChangeNotifier{
   final GameRepoImplementation _gameRepository = GameRepoImplementation();
 
   List<GameEntity> get games => _games;
+
+  void fetchGames(){
+    _games = _gameRepository.fetchGames();
+    notifyListeners();
+  }
 }
