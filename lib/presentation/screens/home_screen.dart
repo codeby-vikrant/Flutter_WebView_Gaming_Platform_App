@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game Platforms'),
+        title: const Text('Game Platforms'),
       ),
       body: ListView.builder(
           itemCount: gameProvider.games.length,
