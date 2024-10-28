@@ -18,19 +18,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
       appBar: AppBar(title: const Text('Game WebView')),
       body: const Stack(
         children: [
-          // WebView(
-          //   initialUrl: widget.url,
-          //   javascriptMode: JavaScriptMode.unrestricted,
-          //   onWebViewCreated: (controller){
-          //     _controller = controller;
-          //   },
-          //   onPageFinished: (url){
-          //     setState(() {
-          //       _isLoading = false;
-          //     });
-          //   },
-          // ),
-          // _isLoading ? Center(child: CircularProgressIndicator()):Container(),
+          WebView(
+            initialUrl: widget.url,
+            javascriptMode: JavaScriptMode.unrestricted,
+            onWebViewCreated: (controller){
+              _controller = controller;
+            },
+            onPageFinished: (url){
+              setState(() {
+                _isLoading = false;
+              });
+            },
+          ),
+          _isLoading ? Center(child: CircularProgressIndicator()):Container(),
         ],
       ),
     );
