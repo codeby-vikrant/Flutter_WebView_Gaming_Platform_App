@@ -16,3 +16,13 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+buildscript {
+    repositories {
+        google() // Required for Android tools
+        mavenCentral() // Optional but recommended for additional libraries
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2' // or the version you want
+    }
+}
+
