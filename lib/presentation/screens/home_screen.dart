@@ -20,7 +20,21 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index){
           final game = gameProvider.games[index];
           return ListTile(
-            leading: CachedNetworkImage(imageUrl: game.logoUrl, placeholder: (context, url) => const CircularProgressIndicator(),),
+            leading: CachedNetworkImage(imageUrl: game.logoUrl, placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text(game.name),
+            onTap: (){
+              Navigator.push(
+               context,
+                MaterialPageRoute(
+                  builder: (context) => WebViewScreen(url: game.url),
+                ),
+              );
+            },
           );
         }
       ),
