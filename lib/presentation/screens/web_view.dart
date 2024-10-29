@@ -11,26 +11,26 @@ class WebViewScreen extends StatefulWidget {
 
 class _WebViewScreenState extends State<WebViewScreen> {
   late WebViewController _controller;
-  final bool _isLoading = true;
+  bool _isLoading = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Game WebView')),
-      body: const Stack(
+      body: Stack(
         children: [
           WebView(
             initialUrl: widget.url,
             javascriptMode: JavaScriptMode.unrestricted,
-            onWebViewCreated: (controller){
+            onWebViewCreated: (controller) {
               _controller = controller;
             },
-            onPageFinished: (url){
+            onPageFinished: (url) {
               setState(() {
                 _isLoading = false;
               });
             },
           ),
-          _isLoading ? Center(child: CircularProgressIndicator()):Container(),
+          _isLoading ? Center(child: CircularProgressIndicator()) : Container(),
         ],
       ),
     );
