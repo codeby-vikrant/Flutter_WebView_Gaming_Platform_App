@@ -20,7 +20,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
         children: [
           WebView(
             initialUrl: widget.url,
-            javascriptMode: JavaScriptMode.unrestricted,
+            javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
               _controller = controller;
             },
